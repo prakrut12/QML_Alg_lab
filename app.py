@@ -1,49 +1,44 @@
 import streamlit as st
 
-# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Quantum Algorithm Lab",
     layout="wide"
 )
 
-# ---------------- CUSTOM CSS ----------------
+# ---------------- CSS ----------------
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 
-* {
-    font-family: 'Orbitron', sans-serif;
-}
+* { font-family: 'Orbitron', sans-serif; }
 
 .stApp {
     background: radial-gradient(circle at top, #0f2027, #000000);
     color: white;
 }
 
-/* Title */
 .title {
     text-align: center;
     font-size: 3rem;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .subtitle {
     text-align: center;
     font-size: 1.2rem;
     color: #9efeff;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-/* Button styling */
 div.stButton > button {
     width: 100%;
-    height: 70px;              /* 👈 balanced size */
+    height: 68px;        /* balanced size */
     font-size: 1.1rem;
     border-radius: 18px;
     border: 1px solid rgba(255,255,255,0.25);
     background: rgba(255,255,255,0.08);
     color: white;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 div.stButton > button:hover {
@@ -58,20 +53,20 @@ st.markdown("<div class='title'>⚛️ Quantum Algorithm Lab</div>", unsafe_allo
 st.markdown("<div class='subtitle'>Explore algorithms powered by quantum logic</div>", unsafe_allow_html=True)
 
 # ---------------- BUTTON GRID ----------------
-col1, col2, col3, col4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 
-with col1:
+with c1:
     if st.button("🧮 Shor’s Algorithm"):
-        st.switch_page("shor_app.py")
+        st.switch_page("shor_app")
 
-with col2:
+with c2:
     if st.button("🔍 Grover’s Algorithm"):
-        st.switch_page("grover_app.py")
+        st.switch_page("grover_app")
 
-with col3:
+with c3:
     if st.button("❓ Simon’s Algorithm"):
-        st.switch_page("simon_app.py")
+        st.switch_page("simon_app")
 
-with col4:
+with c4:
     if st.button("⚛️ Quantum Counting"):
-        st.switch_page("quantum_counting_app.py")
+        st.switch_page("quantum_counting_app")
