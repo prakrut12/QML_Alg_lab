@@ -19,29 +19,28 @@ st.markdown("""
     background: radial-gradient(circle at top, #0f2027, #000000);
 }
 
-/* Reduce button size slightly */
+/* Button styling – balanced size */
 .stButton > button {
     width: 100%;
-    height: 48px;                 /* ⬅️ reduced from default */
-    font-size: 15px;              /* ⬅️ smaller text */
+    height: 58px;                 /* ✅ balanced */
+    font-size: 17px;              /* ✅ readable */
     font-weight: 600;
-    letter-spacing: 1.2px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.06);
+    letter-spacing: 1.4px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.08);
     color: white;
-    border: 1px solid rgba(255,255,255,0.25);
-    transition: all 0.3s ease;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: all 0.25s ease;
 }
 
 /* Hover glow */
 .stButton > button:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 18px rgba(0,255,247,0.6);
+    transform: scale(1.05);
+    box-shadow: 0 0 22px rgba(0,255,247,0.7);
 }
 
-/* Section spacing */
 .block-container {
-    padding-top: 2.5rem;
+    padding-top: 3rem;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -53,27 +52,27 @@ st.markdown(
 )
 
 st.markdown(
-    "<p style='text-align:center;color:#9efeff'>Explore algorithms powered by quantum logic</p>",
+    "<p style='text-align:center;color:#9efeff;font-size:18px'>Explore algorithms powered by quantum logic</p>",
     unsafe_allow_html=True
 )
 
-st.markdown("<br>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True)
 
 # ------------------ BUTTON GRID ------------------
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
 with col1:
     if st.button("🧮  Shor’s Algorithm"):
-        st.switch_page("shor_app.py")
+        st.switch_page("pages/shor_app.py")
 
 with col2:
     if st.button("🔍  Grover’s Algorithm"):
-        st.switch_page("grover_app.py")
+        st.switch_page("pages/grover_app.py")
 
 with col3:
     if st.button("❓  Simon’s Algorithm"):
-        st.switch_page("simon_app.py")
+        st.switch_page("pages/simon_app.py")
 
 with col4:
     if st.button("⚛️  Quantum Counting"):
-        st.switch_page("quantum_counting_app.py")
+        st.switch_page("pages/quantum_counting_app.py")
