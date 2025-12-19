@@ -6,7 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ------------------ GLOBAL CSS ------------------
+# ------------------ STYLES ------------------
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
@@ -21,10 +21,9 @@ st.markdown("""
 }
 
 /* Title */
-.main-title {
+.title {
     text-align: center;
-    font-size: 48px;
-    font-weight: 600;
+    font-size: 46px;
     margin-top: 40px;
 }
 
@@ -35,24 +34,24 @@ st.markdown("""
     margin-bottom: 50px;
 }
 
-/* Button Cards */
-.card-btn button {
+/* Buttons */
+.card button {
     width: 100%;
-    height: 90px;
+    height: 95px;
     font-size: 18px;
     border-radius: 18px;
     background: rgba(255,255,255,0.06);
     color: white;
     border: 2px solid rgba(255,255,255,0.25);
-    transition: all 0.35s ease;
+    transition: all 0.3s ease;
 }
 
-.card-btn button:hover {
-    transform: scale(1.06);
+.card button:hover {
+    transform: scale(1.05);
     box-shadow: 0 0 18px rgba(0,255,255,0.7);
 }
 
-/* Color Accents */
+/* Color Borders */
 .shor button { border-color: #00ff55; }
 .grover button { border-color: #ff00ff; }
 .simon button { border-color: #ffaa00; }
@@ -61,32 +60,32 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ------------------ HEADER ------------------
-st.markdown('<div class="main-title">⚛️ Quantum Algorithm Lab</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">⚛️ Quantum Algorithm Lab</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Explore algorithms powered by quantum logic</div>', unsafe_allow_html=True)
 
 # ------------------ BUTTON GRID ------------------
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.markdown('<div class="card-btn shor">', unsafe_allow_html=True)
+    st.markdown('<div class="card shor">', unsafe_allow_html=True)
     if st.button("🧮  Shor’s Algorithm"):
-        st.switch_page("pages/shor_app.py")
+        st.switch_page("shor_app")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
-    st.markdown('<div class="card-btn grover">', unsafe_allow_html=True)
+    st.markdown('<div class="card grover">', unsafe_allow_html=True)
     if st.button("🔍  Grover’s Algorithm"):
-        st.switch_page("pages/grover_app.py")
+        st.switch_page("grover_app")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col3:
-    st.markdown('<div class="card-btn simon">', unsafe_allow_html=True)
+    st.markdown('<div class="card simon">', unsafe_allow_html=True)
     if st.button("❓  Simon’s Algorithm"):
-        st.switch_page("pages/simon_app.py")
+        st.switch_page("simon_app")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col4:
-    st.markdown('<div class="card-btn counting">', unsafe_allow_html=True)
+    st.markdown('<div class="card counting">', unsafe_allow_html=True)
     if st.button("⚛️  Quantum Counting"):
-        st.switch_page("pages/quantum_counting_app.py")
+        st.switch_page("quantum_counting_app")
     st.markdown('</div>', unsafe_allow_html=True)
